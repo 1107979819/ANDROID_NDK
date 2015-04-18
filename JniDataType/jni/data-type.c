@@ -15,6 +15,9 @@ Java_com_jnidatatype_MainActivity_strCat(JNIEnv *env,jobject thiz,jstring string
 {
 	const char* str1;
 	const char* str2;
+	const char* str3="hello";//这里不可以直接定义const char* str3 = "中文" （如果字符串为中文的话，运行出现错误，如果是英文就没事）
+//	const char* str3=(*env)->NewStringUTF(env,"hello");
+	//	const char* str3=(*env)->NewStringUTF(env,"hello");
 	jboolean isCopy;
 	str1 = (*env)->GetStringUTFChars(env,string1,isCopy);
 	str2 = (*env)->GetStringUTFChars(env,string2,isCopy);
@@ -23,14 +26,16 @@ Java_com_jnidatatype_MainActivity_strCat(JNIEnv *env,jobject thiz,jstring string
 
 	    int str2_len = strlen(str2);
 
+	    int str3_len = strlen(str3);
 
-	    char pszRet[str1_len + str2_len*2 +1];
+
+	    char pszRet[str1_len + str2_len + str3_len +1];
 
 	    strcpy(pszRet, str1);
 
 	    strcat(pszRet, str2);
 
-	    strcat(pszRet, str2);
+	    strcat(pszRet, str3);
 
 	return (*env)->NewStringUTF(env, pszRet);
 }
