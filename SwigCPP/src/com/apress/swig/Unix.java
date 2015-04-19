@@ -13,4 +13,8 @@ public class Unix {
     return UnixJNI.getuid();
   }
 
+  public static void drawByPointer(Point p) {
+    UnixJNI.drawByPointer(Point.getCPtr(p), p);
+  }
+
 }

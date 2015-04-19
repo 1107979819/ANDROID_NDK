@@ -18,16 +18,10 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := hello-jni
 LOCAL_SRC_FILES := hello-jni.c
-#
-#MY_SWIG_PACKAGE	:= com.apress.swig
-#MY_SWIG_INTERFACES	:= Unix.i
-#MY_SWIG_TYPE	:=c
-#
-#include $(LOCAL_PATH)/my-swig-generate.mk
 
 MY_SWIG_PACKAGE:=com.apress.swig  
 MY_SWIG_INTERFACES:=Unix.i  
-MY_SWIG_TYPE:=c  
+MY_SWIG_TYPE:= cxx
 include $(LOCAL_PATH)/my-swig-generate.mk  
 
 include $(BUILD_SHARED_LIBRARY)

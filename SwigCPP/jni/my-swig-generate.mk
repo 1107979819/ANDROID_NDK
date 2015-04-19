@@ -19,7 +19,7 @@ endif
 
 #设置SWIG的模式
 ifeq ($(MY_SWIG_TYPE),cxx)
-	MY_SWIG_MODE	:=	- c++
+	MY_SWIG_MODE	:=	-c++
 else 
 	MY_SWIG_MODE	:=
 endif
@@ -34,7 +34,7 @@ LOCAL_CPP_EXTENSION+= .cxx
 
 #生成SWIG封闭代码（indention should be tabs for this block）
 %_wrap.$(MY_SWIG_TYPE)	: %.i
-	$(call host-mkdir,$(MY_SWIG_OUTDIR))
+	$(call host-mkdir,$(MY_SWIG_OUTDI))
 	swig -java	\
 	$(MY_SWIG_MODE)	\
 	-package $(MY_SWIG_PACKAGE)	\

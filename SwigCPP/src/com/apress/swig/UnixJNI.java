@@ -10,4 +10,11 @@ package com.apress.swig;
 
 public class UnixJNI {
   public final static native long getuid();
+  public final static native void Point_x_set(long jarg1, Point jarg1_, int jarg2);
+  public final static native int Point_x_get(long jarg1, Point jarg1_);
+  public final static native void Point_y_set(long jarg1, Point jarg1_, int jarg2);
+  public final static native int Point_y_get(long jarg1, Point jarg1_);
+  public final static native long new_Point();
+  public final static native void delete_Point(long jarg1);
+  public final static native void drawByPointer(long jarg1, Point jarg1_);
 }
