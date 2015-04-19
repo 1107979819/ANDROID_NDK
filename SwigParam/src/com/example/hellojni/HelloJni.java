@@ -1,6 +1,7 @@
 /**
  * SWING 封装C语言代码
  *  全局变量、常量、只读变量、枚举、结构体
+ *  github版本说明：更新解决extern int counter的错误
  */
 package com.example.hellojni;
 
@@ -25,13 +26,13 @@ public class HelloJni extends Activity
          * function.
          */
         TextView  tv = new TextView(this);
-        tv.setText( "UID："+ Unix.getuid() );
+      //  tv.setText( "UID："+ Unix.getuid() );
         setContentView(tv);
         //设置SWIG设定生成的全局变量 counter
         Unix.setCounter(102);
         //输出 获取SWIG设定生成的全局变量 counter
         System.out.println(Unix.getCounter());
-        //输出 获取SWIG通过 %constant定义的常量
+       //输出 获取SWIG通过 %constant定义的常量
         System.out.println(UnixConstants.MAX_HEIGHT);
         //输出 获取SWIG通过 #define定义的常量
         System.out.println(UnixConstants.MAX_WIDTH);

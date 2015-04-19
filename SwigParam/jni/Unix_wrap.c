@@ -135,12 +135,8 @@
 #include <jni.h>
 #include <stdlib.h>
 #include <string.h>
-int	counter;
-int	readOnly;
-int	readWriter;
-int	one;
-int	two;
-int	three;
+
+
 /* Support for throwing Java exceptions */
 typedef enum {
   SWIG_JavaOutOfMemoryError = 1, 
@@ -193,6 +189,30 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 /* 包含 POSIX 操作系统的API */
 #include<unistd.h>
+
+
+int counter;
+
+
+int readOnly;
+
+
+int readWriter;
+
+
+	enum  {one = 1,two,three}; 
+
+
+enum days {Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}; 
+
+
+enum weeken {Sun = 1, Sat}; 
+
+
+	struct Point{
+		int x;	
+		int y;
+	};
 
 
 #ifdef __cplusplus
@@ -324,6 +344,108 @@ SWIGEXPORT jint JNICALL Java_com_apress_swig_UnixJNI_three_1get(JNIEnv *jenv, jc
   result = (int)three;
   jresult = (jint)result; 
   return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_apress_swig_UnixJNI_Sunday_1get(JNIEnv *jenv, jclass jcls) {
+  jint jresult = 0 ;
+  enum days result;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (enum days)Sunday;
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_apress_swig_UnixJNI_Sun_1get(JNIEnv *jenv, jclass jcls) {
+  jint jresult = 0 ;
+  enum weeken result;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (enum weeken)Sun;
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_apress_swig_UnixJNI_Point_1x_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  struct Point *arg1 = (struct Point *) 0 ;
+  int arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Point **)&jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->x = arg2;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_apress_swig_UnixJNI_Point_1x_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  struct Point *arg1 = (struct Point *) 0 ;
+  int result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Point **)&jarg1; 
+  result = (int) ((arg1)->x);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_apress_swig_UnixJNI_Point_1y_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  struct Point *arg1 = (struct Point *) 0 ;
+  int arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Point **)&jarg1; 
+  arg2 = (int)jarg2; 
+  if (arg1) (arg1)->y = arg2;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_apress_swig_UnixJNI_Point_1y_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  struct Point *arg1 = (struct Point *) 0 ;
+  int result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Point **)&jarg1; 
+  result = (int) ((arg1)->y);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_apress_swig_UnixJNI_new_1Point(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  struct Point *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (struct Point *)calloc(1, sizeof(struct Point));
+  *(struct Point **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_apress_swig_UnixJNI_delete_1Point(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  struct Point *arg1 = (struct Point *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(struct Point **)&jarg1; 
+  free((char *) arg1);
 }
 
 

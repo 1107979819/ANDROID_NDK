@@ -15,5 +15,4 @@ public interface UnixConstants {
   public final static int two = UnixJNI.two_get();
   public final static int three = UnixJNI.three_get();
 
-
 }
