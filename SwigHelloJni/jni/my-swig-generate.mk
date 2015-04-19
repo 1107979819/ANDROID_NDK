@@ -19,7 +19,7 @@ endif
 
 #设置SWIG的模式
 ifeq ($(MY_SWIG_TYPE),cxx)
-	MY_SWIG_MODE	:=	- c++
+	MY_SWIG_MODE	:=	-c++
 else 
 	MY_SWIG_MODE	:=
 endif
@@ -30,7 +30,7 @@ LOCAL_SRC_FILES+=$(foreach MY_SWIG_INTERFACE,\
 	$(basename $(MY_SWIG_INTERFACE))_wrap.$(MY_SWIG_TYPE))
 	
 # 添加.cxx 作为c++ 扩展名
-LOCAL_CPP_EXTENSION+= .cxx
+LOCAL_CPP_EXTENSION+= .cpp
 
 #生成SWIG封闭代码（indention should be tabs for this block）
 %_wrap.$(MY_SWIG_TYPE)	: %.i
