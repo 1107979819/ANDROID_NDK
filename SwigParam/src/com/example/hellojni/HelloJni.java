@@ -1,13 +1,6 @@
 /**
- * SWING 自动生成jni代码
- * 步奏：
- * 		1、创建Unix.i文件后cmd进入项目的根目录执行
- * 命令: 
- * 			swig -java -package com.apress.swig -outdir src/com/apress/swig jni/Unix.i
- * 		2、将SWIG集成到Android构造过程中
- * 
- * 具体参照《Android C++高级编程  使用NDK 》
- * 或者http://blog.csdn.net/hai836045106/article/details/39371777
+ * SWING 封装C语言代码
+ *  全局变量、常量、只读变量、枚举、结构体
  */
 package com.example.hellojni;
 
