@@ -19,7 +19,7 @@ endif
 
 #设置SWIG的模式
 ifeq ($(MY_SWIG_TYPE),cxx)
-	MY_SWIG_MODE	:=	- c++
+	MY_SWIG_MODE	:=	-c++
 else 
 	MY_SWIG_MODE	:=
 endif

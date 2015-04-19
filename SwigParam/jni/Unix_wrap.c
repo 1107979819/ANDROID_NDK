@@ -135,13 +135,12 @@
 #include <jni.h>
 #include <stdlib.h>
 #include <string.h>
-  int counter;
-   int readOnly;
-   int  readWriter;
-   int  one;
-   int  two;
-   int three;
-
+int	counter;
+int	readOnly;
+int	readWriter;
+int	one;
+int	two;
+int	three;
 /* Support for throwing Java exceptions */
 typedef enum {
   SWIG_JavaOutOfMemoryError = 1, 
